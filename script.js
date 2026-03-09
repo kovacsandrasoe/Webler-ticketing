@@ -15,3 +15,5 @@ class Ticket{
         this.isClosed = false;
     }
 }
+
+tickets = [];
