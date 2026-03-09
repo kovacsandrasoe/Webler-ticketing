@@ -76,5 +76,21 @@ function prepareClose(id){
             closeTicket(ticket.id);
         };
     }
+}
 
+//12) C - closeTicket függvény elkészítése: ez a függvény a felületről egy id paraméterrel lesz meghívva, ezen id-hoz tartozó ticketet ki kell keresni a tömbből és beleírni a választ és lezárttá tenni
+function closeTicket(id){
+    let ticket = tickets.find(t => t.id == id);
+    if (ticket != undefined){
+        ticket.isClosed = true;
+        ticket.response = document.getElementById('modalB_inp_resp').value;
+    }
+    save();
+    display();
+    clearResponse();
+}
+
+//response textarea törlése
+function clearResponse(){
+    document.getElementById('modalB_inp_resp').value = '';
 }

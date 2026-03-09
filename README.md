@@ -25,6 +25,6 @@ A Webleres Junior Frontend fejlesztő képzésen egy JS alapú ticketing rendsze
 
 12) A -  UI: close modal elkészítése: a sor végén a lezárás gombra kattintva nyíljon meg egy újabb modal, ahol látjuk a hibajegy szövegét és beküldőjét és erre lehet válaszolni és lezárni
 12) B - A sor végén a gombra kattintva lefut egy prepareClose() függvény, amely betölti a 2. modalba az aktuális hibajegy leírását és beküldőjének a nevét
-12) C - close függvény elkészítése: ez a függvény a felületről egy id paraméterrel lesz meghívva, ezen id-hoz tartozó ticketet ki kell keresni a tömbből és beleírni a választ és lezárttá tenni
+12) C - closeTicket függvény elkészítése: ez a függvény a felületről egy id paraméterrel lesz meghívva, ezen id-hoz tartozó ticketet ki kell keresni a tömbből és beleírni a választ és lezárttá tenni
 
 
