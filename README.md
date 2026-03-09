@@ -27,4 +27,5 @@ A Webleres Junior Frontend fejlesztő képzésen egy JS alapú ticketing rendsze
 12) B - A sor végén a gombra kattintva lefut egy prepareClose() függvény, amely betölti a 2. modalba az aktuális hibajegy leírását és beküldőjének a nevét
 12) C - closeTicket függvény elkészítése: ez a függvény a felületről egy id paraméterrel lesz meghívva, ezen id-hoz tartozó ticketet ki kell keresni a tömbből és beleírni a választ és lezárttá tenni
 
-
+13) UI: kell egy <select>-et készíteni, amiben összes | nyitott | lezárt lehetőségek vannak, hogyha a select-et átállítja valaki, aki leszúrődik a táblázat + beküldőkre ugyanez
+14) szűrési logika: display függvény bővítése státusz paraméterrel és filter() bevezetése
