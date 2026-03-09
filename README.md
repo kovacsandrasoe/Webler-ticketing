@@ -29,3 +29,5 @@ A Webleres Junior Frontend fejlesztő képzésen egy JS alapú ticketing rendsze
 
 13) UI: kell egy <select>-et készíteni, amiben összes | nyitott | lezárt lehetőségek vannak, hogyha a select-et átállítja valaki, aki leszúrődik a táblázat + beküldőkre ugyanez
 14) szűrési logika: display függvény bővítése státusz paraméterrel és filter() bevezetése
+
+15) rendezési logika a létrehozás ideje oszlopfejlécre kattintva

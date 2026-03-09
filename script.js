@@ -17,6 +17,7 @@ class Ticket{
     }
 }
 
+sortOrder = 'asc';
 tickets = [];
 //tickets.push(new Ticket('Nem megy a lift', 'Kovács András'));
 //tickets.push(new Ticket('Gazos a kert', 'Nagy Eszter'));
@@ -137,4 +138,23 @@ function closeTicket(id){
 //response textarea törlése
 function clearResponse(){
     document.getElementById('modalB_inp_resp').value = '';
+}
+
+//rendezés növekvőbe vagy csökkenőbe
+function sortData(){
+    if (sortOrder == 'asc'){
+        //csökkenőbe rendezünk
+        tickets.sort((a,b) => {
+            return a.createdAt.getTime() - b.createdAt.getTime();
+        });
+        sortOrder = 'desc';
+    }
+    else{
+        //növekvőbe rendezünk
+        tickets.sort((a,b) => {
+            return b.createdAt.getTime() - a.createdAt.getTime();
+        });
+        sortOrder = 'asc';
+    }
+    display('all', 'all');
 }
