@@ -28,29 +28,39 @@
                         </tr>
                     </thead>
                     <tbody id="tbody">
-                        <tr class="table-danger">
-                            <td>Nem megy a lift</td>
-                            <td>Juhászné Nagy Marika</td>
-                            <td>2026.03.09 17:20</td>
-                            <td></td>
-                            <td><button class="btn btn-sm btn-warning">Lezárás</button></td>
-                        </tr>
-                        <tr class="table-success">
-                            <td>Nem megy a lift</td>
-                            <td>Juhászné Nagy Marika</td>
-                            <td>2026.03.09 17:20</td>
-                            <td></td>
-                            <td><button class="btn btn-sm btn-warning disabled">Lezárás</button></td>
-                        </tr>
-                        <tr class="table-success">
-                            <td>Nem megy a lift</td>
-                            <td>Juhászné Nagy Marika</td>
-                            <td>2026.03.09 17:20</td>
-                            <td></td>
-                            <td><button class="btn btn-sm btn-warning disabled">Lezárás</button></td>
-                        </tr>
+
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 m-2">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Új hibajegy rögzítése
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Hibajegy rögzítése</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <label class="form-label">Hibajegy leírása</label>
+                                <textarea id="inp_desc" class="form-control" rows="5"></textarea>
+                                <label class="form-label mt-2">Beküldő neve</label>
+                                <input id="inp_user" type="text" class="form-control" />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="add()" class="btn btn-primary">Mentés</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
