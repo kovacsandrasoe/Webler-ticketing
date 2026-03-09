@@ -55,3 +55,13 @@ function display(){
         `;
     });
 }
+
+//11) create függvény elkészítése: 2db input mezőt kikeres és példányosít egy ticketet a beírt adatokból és elhelyezi a tömbben
+function add(){
+    tickets.push(new Ticket(
+        document.getElementById('inp_desc').value,
+        document.getElementById('inp_user').value,
+    ));
+    save();
+    display();
+}
