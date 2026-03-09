@@ -17,6 +17,10 @@ class Ticket{
 }
 
 tickets = [];
+tickets.push(new Ticket('Nem megy a lift', 'Kovács András'));
+tickets.push(new Ticket('Gazos a kert', 'Nagy Eszter'));
+tickets.push(new Ticket('Nem ég a lámpa', 'Kiss Géza'));
+tickets.push(new Ticket('Nem működik a garázskapu', 'Juhász Kálmánné'));
 
 //04) save függvény létrehozása
 function save(){
