@@ -24,7 +24,7 @@ tickets = [];
 //tickets.push(new Ticket('Nem működik a garázskapu', 'Juhász Kálmánné'));
 //tickets[2].isClosed = true;
 load();
-display();
+display('all', 'all');
 
 //04) save függvény létrehozása
 function save(){
@@ -39,9 +39,52 @@ function load(){
     })
 }
 
+function filterStatus(){
+    load();
+    display(document.getElementById('select_filter_status').value, 'all');
+}
+
+function filterUser(){
+    load();
+    display('all', document.getElementById('select_filter_user').value);
+}
+
+function clearFilter(){
+    load();
+    display('all', 'all');
+}
+
+//ő tölti fel a user select-et a nevekkel
+function createUserFilterOptions(){
+    document.getElementById('select_filter_user').innerHTML = 
+    `<option value="all">Összes beküldő</option>`;
+    let namesSet = new Set();
+    tickets.forEach(x => {
+        namesSet.add(x.user);
+    });
+    let names = [];
+    namesSet.keys().forEach(y => {
+        names.push(y);
+    })
+    names = names.sort();
+    names.forEach(x => {
+        document.getElementById('select_filter_user').innerHTML += 
+        `<option value="${x}">${x}</option>`;
+    });
+}
+
 //08) display függvény a táblázat rajzolására
-function display(){
+function display(status, user){
     document.getElementById('tbody').innerHTML = '';
+    if (status == 'closed'){
+        tickets = tickets.filter(x => x.isClosed);
+    }
+    else if (status == 'opened'){
+        tickets = tickets.filter(x => !x.isClosed);
+    }
+    if (user != 'all'){
+        tickets = tickets.filter(x => x.user == user);
+    }
     tickets.forEach(x => {
         document.getElementById('tbody').innerHTML += 
         `
@@ -54,6 +97,7 @@ function display(){
             </tr>
         `;
     });
+    createUserFilterOptions();
 }
 
 //11) create függvény elkészítése: 2db input mezőt kikeres és példányosít egy ticketet a beírt adatokból és elhelyezi a tömbben
@@ -63,7 +107,7 @@ function add(){
         document.getElementById('inp_user').value,
     ));
     save();
-    display();
+    display('all', 'all');
 }
 
 //12B) A sor végén a gombra kattintva lefut egy prepareClose() függvény, amely betölti a 2. modalba az aktuális hibajegy leírását és beküldőjének a nevét
@@ -86,7 +130,7 @@ function closeTicket(id){
         ticket.response = document.getElementById('modalB_inp_resp').value;
     }
     save();
-    display();
+    display('all', 'all');
     clearResponse();
 }
 
