@@ -50,7 +50,7 @@ function display(){
                 <td>${x.user}</td>
                 <td>${x.createdAt.toLocaleDateString('hu-HU')} ${x.createdAt.toLocaleTimeString('hu-HU')}</td>
                 <td>${x.response}</td>
-                <td><button data-bs-toggle="modal" data-bs-target="#exampleModalB" class="btn btn-sm btn-warning ${x.isClosed ? 'disabled' : ''}">Lezárás</button></td>
+                <td><button onclick="prepareClose('${x.id}')" data-bs-toggle="modal" data-bs-target="#exampleModalB" class="btn btn-sm btn-warning ${x.isClosed ? 'disabled' : ''}">Lezárás</button></td>
             </tr>
         `;
     });
@@ -64,4 +64,17 @@ function add(){
     ));
     save();
     display();
+}
+
+//12B) A sor végén a gombra kattintva lefut egy prepareClose() függvény, amely betölti a 2. modalba az aktuális hibajegy leírását és beküldőjének a nevét
+function prepareClose(id){
+    let ticket = tickets.find(t => t.id == id);
+    if (ticket != undefined){
+        document.getElementById('modalB_description').innerText = ticket.description;
+        document.getElementById('modalB_user').innerText = ticket.user;
+        document.getElementById('modalB_closebtn').onclick = () => {
+            closeTicket(ticket.id);
+        };
+    }
+
 }
