@@ -19,6 +19,7 @@ A Webleres Junior Frontend fejlesztő képzésen egy JS alapú ticketing rendsze
 6) UI: táblázat létrehozása, ahol megjelennek a ticketek
 7) tickets tömbbe néhány minta adat elkészítése
 8) display függvény létrehozása, amelyik kirajzolja a táblázatot
+9) load és save függvény bekötése - loadban a dátumok parse-olási gondjának megoldása
 
 10) create függvény elkészítése: 2db input mezőt kikeres és példányosít egy ticketet a beírt adatokból és elhelyezi a tömbben
 11) close függvény elkészítése: ez a függvény a felületről egy id paraméterrel lesz meghívva, ezen id-hoz tartozó ticketet ki kell keresni a tömbből és beleírni a választ és lezárttá tenni

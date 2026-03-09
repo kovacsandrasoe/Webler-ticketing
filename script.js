@@ -18,11 +18,12 @@ class Ticket{
 }
 
 tickets = [];
-tickets.push(new Ticket('Nem megy a lift', 'Kovács András'));
-tickets.push(new Ticket('Gazos a kert', 'Nagy Eszter'));
-tickets.push(new Ticket('Nem ég a lámpa', 'Kiss Géza'));
-tickets.push(new Ticket('Nem működik a garázskapu', 'Juhász Kálmánné'));
-tickets[2].isClosed = true;
+//tickets.push(new Ticket('Nem megy a lift', 'Kovács András'));
+//tickets.push(new Ticket('Gazos a kert', 'Nagy Eszter'));
+//tickets.push(new Ticket('Nem ég a lámpa', 'Kiss Géza'));
+//tickets.push(new Ticket('Nem működik a garázskapu', 'Juhász Kálmánné'));
+//tickets[2].isClosed = true;
+load();
 display();
 
 //04) save függvény létrehozása
@@ -33,6 +34,9 @@ function save(){
 //05) load függvény létrehozása
 function load(){
     tickets = JSON.parse(localStorage.getItem('tickets') ?? '[]');
+    tickets.forEach(x => {
+        x.createdAt = new Date(x.createdAt);
+    })
 }
 
 //08) display függvény a táblázat rajzolására
