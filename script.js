@@ -17,3 +17,8 @@ class Ticket{
 }
 
 tickets = [];
+
+//04) save függvény létrehozása
+function save(){
+    localStorage.setItem('tickets', JSON.stringify(tickets));
+}
