@@ -39,7 +39,7 @@
                     Új hibajegy rögzítése
                 </button>
 
-                <!-- Modal -->
+                <!-- Modal A -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
@@ -57,6 +57,39 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" onclick="add()" data-bs-dismiss="modal" class="btn btn-primary">Mentés</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal B -->
+                <div class="modal fade" id="exampleModalB" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Hibajegy lezárása</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Leírás</th>
+                                            <td id="modalB_description"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Beküldő</th>
+                                            <td id="modalB_user"></td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <label class="form-label mt-2">Hibajegy lezáró válasz</label>
+                                <textarea id="modalB_inp_resp" class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="modalB_closebtn" type="button" data-bs-dismiss="modal" class="btn btn-primary">Mentés</button>
                             </div>
                         </div>
                     </div>

@@ -50,7 +50,7 @@ function display(){
                 <td>${x.user}</td>
                 <td>${x.createdAt.toLocaleDateString('hu-HU')} ${x.createdAt.toLocaleTimeString('hu-HU')}</td>
                 <td>${x.response}</td>
-                <td><button class="btn btn-sm btn-warning ${x.isClosed ? 'disabled' : ''}">Lezárás</button></td>
+                <td><button data-bs-toggle="modal" data-bs-target="#exampleModalB" class="btn btn-sm btn-warning ${x.isClosed ? 'disabled' : ''}">Lezárás</button></td>
             </tr>
         `;
     });
