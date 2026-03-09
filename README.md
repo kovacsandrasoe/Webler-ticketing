@@ -8,7 +8,18 @@ A Webleres Junior Frontend fejlesztő képzésen egy JS alapú ticketing rendsze
 - a problémákat listázni (zöld - lezárt, piros - nyitott) és minden probléma mellett rákattintani a lezárás gombra
 - problémákat szűrni (lezárt/nyitott, bejelentő neve)
 - a problémák legyenek rendezhetőek dátuma alapján növekvőbe vagy csökkenőbe
+- a hibajegyeket meg kell őrizni a localstorage-ben
 
 # Taskosítás - apró részfeladatokra bontás
+1) ticket class létrehozása (id - string(uuid), description - string, user - string, createdAt - Date, response - string, isClosed - bool)
+2) ticket class-nak konstruktor készítése (paraméterek: description, user, kitöltendő a konstruktorban: id, createdAt, isClosed)
+3) tickets tömb létrehozása
+4) save függvény létrehozása
+6) load függvény létrehozása
+7) UI: táblázat létrehozása, ahol megjelennek a ticketek
+8) display függvény létrehozása, amelyik kirajzolja a táblázatot
+
+10) create függvény elkészítése: 2db input mezőt kikeres és példányosít egy ticketet a beírt adatokból és elhelyezi a tömbben
+11) close függvény elkészítése: ez a függvény a felületről egy id paraméterrel lesz meghívva, ezen id-hoz tartozó ticketet ki kell keresni a tömbből és beleírni a választ és lezárttá tenni
 
 
