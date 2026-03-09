@@ -22,3 +22,8 @@ tickets = [];
 function save(){
     localStorage.setItem('tickets', JSON.stringify(tickets));
 }
+
+//05) load függvény létrehozása
+function load(){
+    tickets = JSON.parse(localStorage.getItem('tickets') ?? '[]');
+}
